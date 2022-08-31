@@ -4,9 +4,6 @@ using UnityEngine;
 
 public class Mover : MonoBehaviour
 {
-    [SerializeField] float fltXValue = 0.00f;
-    [SerializeField] float fltYValue = 0.01f;
-    [SerializeField] float fltZValue = 0.00f;
     void Start()
     {
         
@@ -14,6 +11,8 @@ public class Mover : MonoBehaviour
 
     void Update()
     {
-        transform.Translate(fltXValue, fltYValue, fltZValue);
+        float fltXValue = Input.GetAxis("Horizontal");
+        float fltZValue = Input.GetAxis("Vertical");
+        transform.Translate(fltXValue, 0, fltZValue);
     }
 }
