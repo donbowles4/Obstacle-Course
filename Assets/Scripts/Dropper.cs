@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class Dropper : MonoBehaviour
 {
+    [SerializeField] float fltTimeToWait = 3f;
     void Update()
     {
-        Debug.Log(Time.time);
+        if(Time.time > fltTimeToWait)
+        {
+            Debug.Log("3 seconds has elapsed");
+        }
     }
 }
