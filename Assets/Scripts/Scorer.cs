@@ -5,9 +5,12 @@ using UnityEngine;
 public class Scorer : MonoBehaviour
 {
     int intHits = 0;
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision other)
     {
-        intHits++;
-        Debug.Log("You've bumped into things this many times: " + intHits);
+        if (other.gameObject.tag != "Hit")
+        {
+            intHits++;
+            Debug.Log("You've bumped into things this many times: " + intHits);
+        }
     }
 }
